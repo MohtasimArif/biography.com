@@ -1,0 +1,486 @@
+/* Basic reset for body and header */
+body, header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Position the header and logo */
+header.Logo {
+    position: fixed; /* Fixes the header to the top of the page */
+    top: 0;
+    left: 0;
+    padding: 20px; /* Adjust spacing from the edges */
+    background-color:transparent; /* Background color for visibility */
+    z-index: 1000; /* Ensures the header stays on top */
+
+}
+
+img.logo {
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+    animation: bounce 5s infinite; 
+    position:relative;
+    
+}
+img.logo:hover{
+   
+    cursor: pointer;
+    color: black;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+.navbar {
+    position:relative; /* Keep the navbar fixed at the top */
+    width: 100%;
+    padding: 0px 20px; /* Reduced padding for a smaller height */
+    background: rgba(0, 0, 0, 0.3); /* Transparent background */
+    background: linear-gradient( rgb(8, 55, 74), #08b1bd); /* Gradient background */
+    background-size: 400% 400%; /* Bigger background for animation */
+    color: rgb(0, 0, 0);
+    z-index: 1000; /* Ensure it stays on top of other content */
+    animation: gradient 10s ease infinite; /* Gradient animation */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space out logo and menu */
+}
+.navbar-menu{
+    
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Keep the navbar fixed at the top */
+    width: 100%;
+    padding: 120px 120px; /* Reduced padding for a smaller height */
+    display: flex;
+    animation: bounce 1s;
+ 
+     } 
+    
+
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 20px 15px;
+    transition: background 0.5s, color 0.3s;
+}
+
+.navbar a:hover {
+   /* Light background on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+/* Gradient animation */
+@keyframes gradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+.navbar-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu on small screens */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 0px; /* Adjust based on navbar height */
+        left: 0;
+        background: rgba(0, 0, 0, 0.7); /* Background for the menu */
+        z-index: 1001; /* Ensure menu is on top */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .navbar-menu li {
+        margin: 15px 0; /* Spacing for menu items */
+    }
+
+    .navbar-toggle {
+        display: flex; /* Show toggle button on small screens */
+    }
+}
+.navbar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.navbar-menu a i {
+    margin-right: 8px;
+    transition: transform 0.5s;
+}
+
+/* Hide Text Initially */
+.navbar-menu a span {
+    display: none;
+    margin-left: 8px;
+    transition: opacity 0.5s, margin-left 0.5s;
+}
+
+/* Hover Effects */
+.navbar-menu a:hover {
+    
+    color: yellow;
+}
+
+.navbar-menu a:hover i {
+    transform: scale(1.5);
+    animation: bounce 1s;
+}
+
+.navbar-menu a:hover span {
+    display: inline;
+    opacity: 1;
+    margin-left: 10px;
+}
+
+/* Animation on Load */
+.navbar-menu a {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s forwards;
+}
+
+.navbar-menu a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.navbar-menu a:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.navbar-menu a:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.navbar-menu a:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Social Icons Styles */
+.social-icons {
+    display: flexbox;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-right: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+    background-color: transparent;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 35px;
+    transition: transform 0.5s, color 0.5s;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+    color: yellow;
+    transform: scale(1.2);
+}
+
+/* Keyframe Animations */
+@keyframes icon-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.social-icons a {
+    display: inline-block;
+    animation: icon-bounce 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.social-icons a:nth-child(1) {
+    --i: 1;
+}
+.social-icons a:nth-child(2) {
+    --i: 2;
+}
+.social-icons a:nth-child(3) {
+    --i: 3;
+}
+.social-icons a:nth-child(4) {
+    --i: 4;
+}
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-menu a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+/* Add this to your CSS file */
+
+.home {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 150vh; /* Full viewport height */
+    background: linear-gradient(135deg, #e1decd, #0b8aaa); /* Gradient background */
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+.home-content {
+    text-align: center;
+    color: black;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #e1decd, #0b8aaa);
+    }
+    100% {
+        background: linear-gradient(135deg, #e1decd, #075a6f);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 2.8em;
+    margin: 0;
+    padding: 0;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+p {
+    font-size: 1.5em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+.family-photo {
+    width: 1700px; /* Adjust as needed */
+    height: 700px;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: transform 1s ease-in-out;
+}
+
+.family-photo:hover {
+    animation: bounce 1s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+@media (max-width: 768px) {
+    .family-photo {
+        width: 90%; /* Slightly larger on smaller screens */
+        max-width: 800px; /* Adjust max width */
+    }
+}
+
+@media (max-width: 480px) {
+    .family-photo {
+        width: 100%; /* Full width on very small screens */
+        max-width: none; /* Remove max-width restriction */
+    }
+}
+/* Family Tree Styles */
+.family-tree {
+    margin-top: 40px;
+    text-align: center; /* Center the text and images */
+}
+
+.family-tree h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.family-tree-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center images */
+    gap: 20px; /* Space between images */
+}
+
+.tree-photo-container {
+    position: relative;
+    display: inline-block; /* Allows for positioning of child elements */
+}
+
+.tree-photo {
+    width: 200px; /* Fixed width for images */
+    height: 200px; /* Fixed height for images */
+    border-radius: 50%; /* Circular photos */
+    object-fit: cover; /* Ensure image covers the circle */
+    transition: transform 0.3s ease-in-out;
+}
+
+.tree-photo:hover {
+    transform: scale(1.1); /* Slightly enlarge photo on hover */
+}
+
+.photo-name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.tree-photo-container:hover .photo-name {
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .tree-photo {
+        width: 80px; /* Smaller images on medium screens */
+        height: 80px;
+    }
+
+    .photo-name {
+        font-size: 0.8em; /* Adjust text size */
+    }
+
+    .family-tree h2 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .tree-photo {
+        width: 60px; /* Smaller images on small screens */
+        height: 60px;
+    }
+
+    .photo-name {
+        font-size: 0.7em; /* Further adjust text size */
+    }
+
+    .family-tree h2 {
+        font-size: 1.5em; /* Further reduce heading size */
+    }
+}
