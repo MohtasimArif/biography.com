@@ -484,3 +484,103 @@ p {
         font-size: 1.5em; /* Further reduce heading size */
     }
 }
+/* Existing media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+        padding: 20px; /* Adjust padding for smaller screens */
+        flex-direction: column;
+    }
+
+    .navbar-menu a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .family-photo {
+        width: 90%; /* Slightly larger on smaller screens */
+        max-width: 800px;
+    }
+
+    .tree-photo {
+        width: 80px; /* Smaller images on medium screens */
+        height: 80px;
+    }
+
+    .photo-name {
+        font-size: 0.8em; /* Adjust text size */
+    }
+
+    .family-tree h2 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .family-photo {
+        width: 100%; /* Full width on very small screens */
+        max-width: none;
+    }
+
+    .tree-photo {
+        width: 60px; /* Smaller images on small screens */
+        height: 60px;
+    }
+
+    .photo-name {
+        font-size: 0.7em; /* Further adjust text size */
+    }
+
+    .family-tree h2 {
+        font-size: 1.5em; /* Further reduce heading size */
+    }
+}
+
+/* Additional media query for very large screens */
+@media (min-width: 1200px) {
+    .navbar-menu a {
+        font-size: 36px; /* Larger font size for larger screens */
+    }
+
+    .family-photo {
+        width: 100%; /* Adjust for larger screens if needed */
+        max-width: 1200px;
+    }
+
+    .tree-photo {
+        width: 250px; /* Larger images on large screens */
+        height: 250px;
+    }
+
+    .photo-name {
+        font-size: 24px; /* Larger text size */
+    }
+
+    .family-tree h2 {
+        font-size: 2.5em; /* Larger heading size */
+    }
+}
